@@ -119,5 +119,115 @@ public class Chapter2 {
         }
 
         System.out.printf("After the sixth month, the account value is $%.2f\n", accountValue);
+
+        //Ex. 2.14
+        System.out.print("Enter weight in pounds: ");
+        double pounds = input.nextDouble();
+        System.out.print("Enter height in inches: ");
+
+        double height = input.nextDouble();
+        double weightInPounds = pounds * 0.45359;
+        double heightInMeters = height * 0.0254;
+
+        double bmi = weightInPounds / (heightInMeters * heightInMeters);
+        System.out.println("BMI is " + bmi);
+
+        //Ex. 2.15
+        System.out.print("Enter x1 and y1: ");
+        double x1 = input.nextDouble();
+        double y1 = input.nextDouble();
+
+        System.out.print("Enter x2 and y2: ");
+        double x2 = input.nextDouble();
+        double y2 = input.nextDouble();
+
+        double distance = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+
+        System.out.println("The distance between the two points is " + distance);
+
+        //Ex. 2.16
+        System.out.print("Enter the length of the side: ");
+        double s = input.nextDouble();
+
+        double area = (3 * Math.sqrt(3) / 2) * (s * s);
+
+        System.out.println("The area of the hexagon is " + area);
+
+        //Ex. 2.17
+        System.out.print("Enter the temperature in Fahrenheit (-58 to 41): ");
+        double temperature = input.nextDouble();
+
+        System.out.print("Enter the wind speed (>= 2) in miles per hour: ");
+        double windSpeed = input.nextDouble();
+
+        double windChill = 35.74 + 0.6215 * temperature
+                - 35.75 * Math.pow(windSpeed, 0.16)
+                + 0.4275 * temperature * Math.pow(windSpeed, 0.16);
+
+        System.out.println("The wind chill index is " + windChill);
+
+        //Ex. 2.18
+        System.out.println("a   b   pow(a, b)");
+        for (int a = 1, b = 2; a <= 5; a++, b++) {
+            System.out.println(a + "   " + b + "   " + (int) Math.pow(a, b));
+        }
+
+        //Ex. 2.19
+        System.out.print("Enter x1 y1 x2 y2 x3 y3: ");
+        double x1 = input.nextDouble(), y1 = input.nextDouble();
+        double x2 = input.nextDouble(), y2 = input.nextDouble();
+        double x3 = input.nextDouble(), y3 = input.nextDouble();
+
+        double side1 = Math.sqrt(Math.pow(x2 - x1, 2) + Math.pow(y2 - y1, 2));
+        double side2 = Math.sqrt(Math.pow(x3 - x2, 2) + Math.pow(y3 - y2, 2));
+        double side3 = Math.sqrt(Math.pow(x1 - x3, 2) + Math.pow(y1 - y3, 2));
+
+        double s = (side1 + side2 + side3) / 2;
+        double area = Math.sqrt(s * (s - side1) * (s - side2) * (s - side3));
+
+        System.out.println("The area of the triangle is " + area);
+
+        //Ex. 2.20
+        System.out.print("Enter balance and interest rate (e.g., 3 for 3%): ");
+        double balance = input.nextDouble();
+        double annualInterestRate = input.nextDouble();
+
+        double interest = balance * (annualInterestRate / 1200);
+        System.out.printf("The interest is %.5f\n", interest);
+
+        //Ex. 2.21
+        System.out.print("Enter investment amount: ");
+        double investmentAmount = input.nextDouble();
+        System.out.print("Enter annual interest rate in percentage: ");
+        double annualInterestRate = input.nextDouble();
+        System.out.print("Enter number of years: ");
+        int years = input.nextInt();
+
+        double monthlyInterestRate = annualInterestRate / 1200;
+        double futureInvestmentValue = investmentAmount * Math.pow(1 + monthlyInterestRate, years * 12);
+
+        System.out.printf("Future value is $%.2f\n", futureInvestmentValue);
+
+        //Ex. 2.22
+        System.out.print("Enter an amount in cents (e.g., 1156 for $11.56): ");
+        int amount = input.nextInt();
+
+        int dollars = amount / 100;
+        int cents = amount % 100;
+
+        System.out.println("Dollars: " + dollars);
+        System.out.println("Cents: " + cents);
+
+        //Ex. 2.23
+        System.out.print("Enter the driving distance: ");
+        double distance = input.nextDouble();
+        System.out.print("Enter miles per gallon: ");
+        double milesPerGallon = input.nextDouble();
+        System.out.print("Enter price per gallon: ");
+        double pricePerGallon = input.nextDouble();
+
+        double cost = (distance / milesPerGallon) * pricePerGallon;
+
+        System.out.printf("The cost of driving is $%.2f\n", cost);
     }
 }
